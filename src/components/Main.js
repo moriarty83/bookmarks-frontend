@@ -6,7 +6,7 @@ import Show from "../pages/Show";
 function Main(props) {
     const [bookmarks, setBookmarks] = useState(null);
 
-    const URL = ""
+    const URL = "https://mongoose-bookmarks.herokuapp.com/bookmarks/"
 
     const getBookmarks = async () => {
         const response = await fetch(URL);
