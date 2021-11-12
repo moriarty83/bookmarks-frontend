@@ -6,7 +6,7 @@ function Show(props) {
     // save bookmarks standalone variable
     const bookmarks = props.bookmarks;
     // find the bookmark to show
-    const bookmark = bookmark.find((singleBookmark) => {
+    const bookmark = bookmarks.find((singleBookmark) => {
         return singleBookmark._id === id;
     });
 

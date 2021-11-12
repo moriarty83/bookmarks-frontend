@@ -13,7 +13,7 @@ function Index(props) {
         setNewForm({ ...newForm, [event.target.name]: event.target.value });
     };
 
-    // handle submit function for forxm
+    // handle submit function for form
     const handleSubmit = (event) => {
         event.preventDefault();
         props.createBookmarks(newForm);
@@ -36,6 +36,16 @@ function Index(props) {
     const loading = () => {
         return <h1>Loading...</h1>;
     };
+
+    // form validation
+    // function checkforblank() {
+    //     if (document.getElementById('title').value === "") {
+    //         alert(' fields can not be blank');
+    //         return false;
+    //     }
+    // }
+
+
     return (
         <section>
             <form onSubmit={handleSubmit}>
