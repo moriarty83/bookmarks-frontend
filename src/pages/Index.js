@@ -10,10 +10,10 @@ function Index(props) {
 
     // handleChange function for form
     const handleChange = (event) => {
-        setNewForm({ ...newForm, [event.target.title]: event.target.value });
+        setNewForm({ ...newForm, [event.target.name]: event.target.value });
     };
 
-    // handle submit function for form
+    // handle submit function for forxm
     const handleSubmit = (event) => {
         event.preventDefault();
         props.createBookmarks(newForm);
@@ -44,7 +44,7 @@ function Index(props) {
                     value={newForm.title}
                     name="title"
                     placeholder="title"
-                    onChange={handleSubmit}
+                    onChange={handleChange}
                 />
                 <input
                     type="text"
