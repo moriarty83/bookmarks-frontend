@@ -35,12 +35,14 @@ function Index(props) {
             
         return(
             <div key={bookmark._id} className="bookmark" style={cssProperties}>
-                <Link to={`bookmarks/${bookmark._id}`}><h1>{bookmark.title}</h1></Link>
+                <h1><a href={bookmark.url} target="_blank">{bookmark.title}</a></h1>
                 <h2>{bookmark.url}</h2>
+                <Link to={`bookmarks/${bookmark._id}`}><button>View Bookmark</button></Link>
             </div>
         )});
     };
-
+    
+    
     const loading = () => {
         return <h1>Loading...</h1>;
     };
