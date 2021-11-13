@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
-import Footer from "./Footer";
+
 
 function Main(props) {
     const [bookmarks, setBookmarks] = useState(null);
