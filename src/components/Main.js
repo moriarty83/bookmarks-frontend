@@ -32,7 +32,7 @@ function Main(props) {
         await fetch (URL + id, {
             method: "put",
             headers: {
-                "Content_Type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(bookmark)
         });
