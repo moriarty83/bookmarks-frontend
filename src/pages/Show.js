@@ -37,7 +37,7 @@ function Show(props) {
                 <div key={bookmark._id} className="show-bookmark" >
                     <h1>{bookmark.title}</h1>
                     <h2>{bookmark.url}</h2>
-            <div class="form-div">
+            <div className="form-div">
 
             <form onSubmit={handleSubmit}>
                 <input
