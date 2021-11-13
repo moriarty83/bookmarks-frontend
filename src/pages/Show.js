@@ -33,11 +33,12 @@ function Show(props) {
 
     return (
         <div className="bookmark">
-            <h1>{bookmark.title}</h1>
-            <h2>{bookmark.url}</h2>
-            <button onClick={removeBookmark} id="delete">
-                DELETE
-            </button>
+            <container id="show-index-card">
+                <div key={bookmark._id} className="show-bookmark" >
+                    <h1>{bookmark.title}</h1>
+                    <h2>{bookmark.url}</h2>
+            <div class="form-div">
+
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -55,6 +56,16 @@ function Show(props) {
                 />
                 <input type="submit" value="Update a Bookmark" />
             </form>
+
+            <button onClick={removeBookmark} id="delete">
+                DELETE
+            </button>
+
+                </div>
+                </div>
+
+            </container>
+            
         </div>
     );
 };

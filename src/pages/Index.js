@@ -30,6 +30,9 @@ function Index(props) {
             const cssProperties = {}
             cssProperties['--i'] = index;
             cssProperties['--zindex'] = props.bookmarks.length - index;
+            cssProperties['--bg-image'] = +index % 5 === 0 ? 'url("./index_blue.png")' : 'url("./index_yellow.png")';
+            
+            
         return(
             <div key={bookmark._id} className="bookmark" style={cssProperties}>
                 <Link to={`bookmarks/${bookmark._id}`}><h1>{bookmark.title}</h1></Link>
