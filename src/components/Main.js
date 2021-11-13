@@ -56,7 +56,7 @@ function Main(props) {
                     <Index bookmarks={bookmarks} createBookmarks={createBookmarks} />
                 </Route>
                 <Route
-                    path="bookmarks/:id"
+                    path="/bookmarks/:id"
                     render={(rp) => (
                         <Show
                             {...rp}

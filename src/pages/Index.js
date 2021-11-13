@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {Link} from "react-router-dom"
 
+
 function Index(props) {
     // state to hold formData
     const [newForm, setNewForm] = useState({
@@ -13,7 +14,7 @@ function Index(props) {
         setNewForm({ ...newForm, [event.target.name]: event.target.value });
     };
 
-    // handle submit function for forxm
+    // handle submit function for form
     const handleSubmit = (event) => {
         event.preventDefault();
         props.createBookmarks(newForm);
@@ -39,17 +40,19 @@ function Index(props) {
     const loading = () => {
         return <h1>Loading...</h1>;
     };
+
+
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <input
+                <input required
                     type="text"
                     value={newForm.title}
                     name="title"
                     placeholder="title"
                     onChange={handleChange}
                 />
-                <input
+                <input required
                     type="text"
                     value={newForm.url}
                     name="url"
