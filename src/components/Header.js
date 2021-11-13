@@ -4,7 +4,9 @@ function Header(props) {
     return (
         <nav className="nav">
             <Link to = "/">
-                <div>Bookmarks App</div>
+                <h1>Fighting</h1>
+                <img className="nav-img" src="/images/mongoose.png" />
+                <h1>Bookmarks</h1>
             </Link>
         </nav>
     )
