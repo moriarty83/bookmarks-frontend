@@ -34,7 +34,7 @@ function Index(props) {
             
             
         return(
-            <div key={bookmark._id} className="bookmark"  style={cssProperties}>
+            <div key={bookmark._id} class="bookmark"  style={cssProperties}>
                 <h1><a href={bookmark.url} target="_blank" rel="noreferrer">{bookmark.title}</a></h1>
                 <h2>{bookmark.url}</h2>
                 <Link to={`bookmarks/${bookmark._id}`}><button>View Bookmark</button></Link>
@@ -49,7 +49,7 @@ function Index(props) {
 
 
     return (
-        <div className="container">
+        <div class="container">
             <section>
                 <form onSubmit={handleSubmit}>
                     <fieldset>
@@ -73,7 +73,7 @@ function Index(props) {
                 </form>
             </section>
                 <section>
-                               <div className="bookmark-container">
+                               <div class="bookmark-container">
                     {props.bookmarks ? loaded() : loading ()}
                 </div>
                 </section>
