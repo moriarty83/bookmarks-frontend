@@ -1,6 +1,15 @@
 import { useState } from "react";
 import {Link} from "react-router-dom"
 
+    // form validation
+    // function validate() {
+    //     let err = document.forms["newForm"]["title"].value;
+    //     if (err === "") {
+    //         alert("field can not be blank")
+    //         return false;
+    //     };
+    // }
+
 function Index(props) {
     // state to hold formData
     const [newForm, setNewForm] = useState({
@@ -37,26 +46,18 @@ function Index(props) {
         return <h1>Loading...</h1>;
     };
 
-    // form validation
-    // function checkforblank() {
-    //     if (document.getElementById('title').value === "") {
-    //         alert(' fields can not be blank');
-    //         return false;
-    //     }
-    // }
-
 
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <input
+                <input required
                     type="text"
                     value={newForm.title}
                     name="title"
                     placeholder="title"
                     onChange={handleChange}
                 />
-                <input
+                <input required
                     type="text"
                     value={newForm.url}
                     name="url"
