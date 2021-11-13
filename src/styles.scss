@@ -5,15 +5,21 @@
 :root {
   --i: ;
   --zindex: ;
+
+  --bg-image: ;
 }
 
 body {
+  background-color: #f5f5f5;
   font-family: "Exo 2", sans-serif;
 }
 
 nav {
+  position: fixed;
+  z-index: 100;
+  top: 0;
   width: 100%;
-  height: 4em;
+  height: 5em;
   background: radial-gradient(#c7d0d5, #93b1c6);
 
   a {
@@ -26,7 +32,7 @@ nav {
 }
 
 .nav-img {
-  height: 4em;
+  height: 3.9em;
 }
 
 form {
@@ -52,7 +58,17 @@ form {
 
 button {
   border: 3px solid #ec583a;
-  background-color: 93b1c6;
+  background-color: #93b1c6;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1em;
+  font-family: "Exo 2", sans-serif;
+  transition: all 0.5s;
+  &:hover {
+    background-color: #ff7148;
+    transition: all 0.5s;
+  }
 }
 
 input[type="submit"] {
@@ -60,8 +76,8 @@ input[type="submit"] {
   background-color: #93b1c6;
   border-radius: 20px;
   padding-left: 20px;
-  padding-right: 10px;
-  font-size: 0.8em;
+  padding-right: 20px;
+  font-size: 1em;
   font-family: "Exo 2", sans-serif;
   transition: all 0.5s;
   &:hover {
@@ -74,6 +90,11 @@ input[type="submit"] {
 // Main
 //////////////////
 
+main {
+  margin-top: 5em;
+  position: relative;
+}
+
 container {
   display: flex;
   flex-direction: column;
@@ -84,6 +105,7 @@ container {
 section {
   position: relative;
   width: 50%;
+  height: auto;
 }
 
 // Card Stack CSS - This code is Thanks to Online Tutorials on Youtube
@@ -112,18 +134,24 @@ section {
 //   clip-path: circle(250px at center);
 // }
 
+///////////////////
+// INDEX VIEW
+//////////////////
+
 .bookmark-container {
   position: absolute;
   width: 100%;
+  height: auto;
 }
 
 .bookmark-container .bookmark {
   position: absolute;
+  margin-bottom: 50%;
   top: 0em;
   left: 50%;
   width: 50vw;
   height: 30vw;
-  background-image: url("./index_blue.png");
+  background-image: url("./images/index_blue.png");
   background-size: 45em 27em;
   background-repeat: cover;
   border-radius: 10px;
@@ -151,5 +179,80 @@ section {
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+///////////////////
+// SHOW
+//////////////////
+
+.show-bookmark {
+  position: relative;
+
+  margin: 5em;
+  width: 50vw;
+  height: 30vw;
+  background-image: url("./images/index_blue.png");
+  background-size: 45em 27em;
+  background-repeat: cover;
+  border-radius: 10px;
+  border: 5px solid black;
+  transform: translateX(-10%) translateY(-10%) skew(10deg) scale(0.8);
+  box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
+  z-index: var(--zindex);
+  transition: all 0.5s;
+
+  h1 {
+    width: 90%;
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 1.5em;
+    width: 90%;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  .form-div {
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  &:hover {
+    transform: translateX(0%) translateY(0%) skew(0deg) scale(1);
+
+    .form-div {
+      opacity: 1;
+      transition: all 0.5s;
+    }
+  }
+}
+
+///////////////////
+// FOOTER
+//////////////////
+footer {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4em;
+  background: radial-gradient(#c7d0d5, #93b1c6);
+  color: #ec583a;
+  text-shadow: 0px 0px 1px black;
+
+  #team-name {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  p {
+    padding: 0;
+    font-size: 0.6em;
   }
 }

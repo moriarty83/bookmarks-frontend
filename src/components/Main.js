@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
+import Footer from "./Footer";
 
 function Main(props) {
     const [bookmarks, setBookmarks] = useState(null);
@@ -28,14 +29,16 @@ function Main(props) {
     };
 
     const updateBookmarks = async (bookmark, id) => {
+        console.log(id)
+        console.log(bookmark)
         // make a put request to create bookmarks
         await fetch (URL + id, {
             method: "put",
             headers: {
-                "Content_Type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(bookmark)
-        });
+        }).catch((error)=>{console.log(error)});
         getBookmarks();
     };
 
