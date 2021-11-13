@@ -1,14 +1,6 @@
 import { useState } from "react";
 import {Link} from "react-router-dom"
 
-    // form validation
-    // function validate() {
-    //     let err = document.forms["newForm"]["title"].value;
-    //     if (err === "") {
-    //         alert("field can not be blank")
-    //         return false;
-    //     };
-    // }
 
 function Index(props) {
     // state to hold formData
