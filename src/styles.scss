@@ -111,29 +111,6 @@ section {
 // Card Stack CSS - This code is Thanks to Online Tutorials on Youtube
 // https:www.youtube.com/watch?v=9ziMhwJU7qw */
 
-// body {
-//   width: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: start;
-//   align-items: center;
-//   min-height: 100vh;
-//   background: papayawhip;
-//   transition: 0.5s;
-// }
-
-// body::before {
-//   content: "";
-//   position: absolute;
-//   z-index: auto;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 100%;
-//   background: purple;
-//   clip-path: circle(250px at center);
-// }
-
 ///////////////////
 // INDEX VIEW
 //////////////////
@@ -156,7 +133,7 @@ section {
   background-repeat: cover;
   border-radius: 10px;
   border: 5px solid black;
-  transform: translateX(-45%) translateY(calc(1em * var(--i))) rotate(40deg)
+  transform: translateX(-45%) translateY(calc(10% * var(--i))) rotate(40deg)
     skew(20deg, -20deg) scale(0.6);
   box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
   z-index: var(--zindex);
