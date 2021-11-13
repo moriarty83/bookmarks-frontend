@@ -133,10 +133,10 @@ section {
   background-repeat: cover;
   border-radius: 10px;
   border: 5px solid black;
-  transform: translateX(-45%) translateY(calc(var(--i) * 1em)) rotate(40deg)
+  transform: translateX(-45%) translateY(calc(1em * 3)) rotate(40deg)
     skew(20deg, -20deg) scale(0.6);
   box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
-  z-index: var(--zindex);
+  z-index: 3;
   transition: all 0.5s;
 }
 
@@ -150,7 +150,7 @@ section {
     // left: 50%;
     z-index: 1;
     opacity: 0.5;
-    transform: translateX(-45%) translateY(calc(90% * var(--i))) rotate(0deg)
+    transform: translateX(-45%) translateY(calc(90% * 3)) rotate(0deg)
       skew(0deg, 0deg) scale(0.8);
 
     &:hover {
@@ -176,7 +176,7 @@ section {
   border: 5px solid black;
   transform: translateX(-10%) translateY(-10%) skew(10deg) scale(0.8);
   box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
-  z-index: var(--zindex);
+  z-index: 3;
   transition: all 0.5s;
 
   h1 {
