@@ -25,12 +25,15 @@ function Index(props) {
 
     // loaded function
     const loaded = () => {
-        return props.bookmarks.map((bookmark) => (
-            <div key={bookmark._id} className="bookmark">
+        return props.bookmarks.map((bookmark, index) =>{
+            const cssProperties = {}
+            cssProperties['--i'] = index;
+        return(
+            <div key={bookmark._id} className="bookmark" style={cssProperties}>
                 <Link to={`bookmarks/${bookmark._id}`}><h1>{bookmark.title}</h1></Link>
                 <h2>{bookmark.url}</h2>
             </div>
-        ));
+        )});
     };
 
     const loading = () => {
@@ -55,7 +58,9 @@ function Index(props) {
                 />
                 <input type="submit" value="Add a Bookmark" />
             </form>
-            {props.bookmarks ? loaded() : loading ()}
+            <div class="bookmark-container">
+                {props.bookmarks ? loaded() : loading ()}
+            </div>
         </section>
     );
 }
