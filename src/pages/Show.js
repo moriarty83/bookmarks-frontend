@@ -15,7 +15,7 @@ function Show(props) {
 
     // handleChange function for form
     const handleChange = (event) => {
-        setEditForm({ ...editForm, [event.target.title]: event.target.value });
+        setEditForm({ ...editForm, [event.target.name]: event.target.value });
     };
 
     // handleSubmit function for from submission
