@@ -5,7 +5,7 @@
 :root {
   --i: 5;
   --zindex: 5;
-  --bg-image: ;
+  --bg-image: url("./images/index_blue.png");
 }
 
 body {
@@ -149,7 +149,7 @@ section {
     // left: 50%;
     z-index: 1;
     opacity: 0.5;
-    transform: translateX(-45%) translateY(calc(90% * 3)) rotate(0deg)
+    transform: translateX(-45%) translateY(calc(90% * var(--i))) rotate(0deg)
       skew(0deg, 0deg) scale(0.8);
 
     &:hover {
@@ -162,10 +162,17 @@ section {
 // SHOW
 //////////////////
 
+#show-index-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .show-bookmark {
   position: relative;
 
-  margin: 5em;
+  margin: auto;
+  margin-top: 5em;
   width: 50vw;
   height: 30vw;
   background-image: url("./images/index_blue.png");
@@ -176,6 +183,7 @@ section {
   transform: translateX(-10%) translateY(-10%) skew(10deg) scale(0.8);
   box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
   z-index: 3;
+  opacity: 0.5;
   transition: all 0.5s;
 
   h1 {
@@ -198,6 +206,7 @@ section {
 
   &:hover {
     transform: translateX(0%) translateY(0%) skew(0deg) scale(1);
+    opacity: 1;
 
     .form-div {
       opacity: 1;
