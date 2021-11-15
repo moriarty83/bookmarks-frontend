@@ -3,9 +3,30 @@
 // #c7d0d5, #93b1c6, #f5f5f5, #ff7148, #ec583a
 /////////////////
 :root {
+  --card-color: "pink";
   --i: 5;
   --zindex: 5;
-  --bg-image: url("./images/index_blue.png");
+  --bg-image: "breen";
+  --arr-length: 1;
+}
+
+// Function thanks to: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}
+
+@mixin set-bg($side) {
+  background-image: url("./images/index_#{$side}.png");
 }
 
 body {
@@ -117,7 +138,7 @@ section {
 .bookmark-container {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: calc(400px + var(--arr-length) * 10px);
 }
 
 .bookmark-container .bookmark {
@@ -127,7 +148,7 @@ section {
   left: 50%;
   width: 50vw;
   height: 30vw;
-  background-image: url("./images/index_blue.png");
+  @include set-bg("green");
   background-size: 45em 27em;
   background-repeat: cover;
   border-radius: 10px;
@@ -135,8 +156,24 @@ section {
   transform: translateX(-45%) translateY(calc(1em * var(--i))) rotate(40deg)
     skew(20deg, -20deg) scale(0.6);
   box-shadow: 25px 25px 100px rgba(0, 0, 0, 0.2);
-  z-index: 3;
+  z-index: var(--zindex);
   transition: all 0.5s;
+
+  &.blue-index {
+    background-image: url("./images/index_blue.png");
+  }
+  &.green-index {
+    background-image: url("./images/index_green.png");
+  }
+  &.pink-index {
+    background-image: url("./images/index_pink.png");
+  }
+  &.purple-index {
+    background-image: url("./images/index_purple.png");
+  }
+  &.yellow-index {
+    background-image: url("./images/index_yellow.png");
+  }
 }
 
 .bookmark-container:hover {
@@ -147,7 +184,7 @@ section {
   .bookmark {
     top: 0%;
     // left: 50%;
-    z-index: 1;
+    // z-index: 1;
     opacity: 0.5;
     transform: translateX(-45%) translateY(calc(90% * var(--i))) rotate(0deg)
       skew(0deg, 0deg) scale(0.8);
