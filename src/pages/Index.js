@@ -26,20 +26,52 @@ function Index(props) {
 
     // loaded function
     const loaded = () => {
-        return props.bookmarks.map((bookmark, index) =>{
+        const bookmarkElements = props.bookmarks.map((bookmark, index) =>{
+            let cardClass = 'blue-index'
+            switch(index % 5){
+                case 0: 
+                cardClass = 'blue-index'
+                break
+
+                case 1: 
+                cardClass = 'green-index'
+                break
+
+                case 2: 
+                cardClass = 'pink-index'
+                break
+
+                case 3: 
+                cardClass = 'purple-index'
+                break
+
+                case 4: 
+                cardClass = 'yellow-index'
+                break
+
+            }
+            
             const cssProperties = {}
-            cssProperties['--i'] = index;
+            cssProperties['--i'] = +index;
             cssProperties['--zindex'] = props.bookmarks.length - index;
-            cssProperties['--bg-image'] = +index % 5 === 0 ? 'url("./index_blue.png")' : 'url("./index_yellow.png")';
+            // cssProperties['--bg-image-yellow'];
             
             
         return(
-            <div key={bookmark._id} class="bookmark"  style={cssProperties}>
+            <div key={bookmark._id} class={"bookmark "+cardClass}  style={cssProperties}>
                 <h1><a href={bookmark.url} target="_blank" rel="noreferrer">{bookmark.title}</a></h1>
                 <h2>{bookmark.url}</h2>
                 <Link to={`bookmarks/${bookmark._id}`}><button>View Bookmark</button></Link>
             </div>
         )});
+        
+        const cssProperties={};
+        cssProperties['--arr-length']= bookmarkElements.length;
+        return(
+            <div class="bookmark-container" style={cssProperties}>
+                {bookmarkElements}
+            </div>
+        )
     };
     
     
@@ -73,9 +105,8 @@ function Index(props) {
                 </form>
             </section>
                 <section>
-                               <div class="bookmark-container">
                     {props.bookmarks ? loaded() : loading ()}
-                </div>
+                
                 </section>
             </div>
     );
