@@ -49,6 +49,8 @@ function Index(props) {
                 cardClass = 'yellow-index'
                 break
 
+                default:
+                    cardClass = 'blue-index'
             }
             
             const cssProperties = {}
@@ -58,7 +60,7 @@ function Index(props) {
             
             
         return(
-            <div key={bookmark._id} class={"bookmark "+cardClass}  style={cssProperties}>
+            <div key={bookmark._id} className={"bookmark "+cardClass}  style={cssProperties}>
                 <h1><a href={bookmark.url} target="_blank" rel="noreferrer">{bookmark.title}</a></h1>
                 <h2>{bookmark.url}</h2>
                 <Link to={`bookmarks/${bookmark._id}`}><button>View Bookmark</button></Link>
@@ -68,7 +70,7 @@ function Index(props) {
         const cssProperties={};
         cssProperties['--arr-length']= bookmarkElements.length;
         return(
-            <div class="bookmark-container" style={cssProperties}>
+            <div className="bookmark-container" style={cssProperties}>
                 {bookmarkElements}
             </div>
         )
@@ -81,7 +83,7 @@ function Index(props) {
 
 
     return (
-        <div class="container">
+        <div className="container">
             <section>
                 <form onSubmit={handleSubmit}>
                     <fieldset>

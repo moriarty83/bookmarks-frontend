@@ -138,7 +138,7 @@ section {
 .bookmark-container {
   position: absolute;
   width: 100%;
-  height: calc(400px + var(--arr-length) * 10px);
+  height: calc(500px + var(--arr-length) * 20px);
 }
 
 .bookmark-container .bookmark {
@@ -222,6 +222,22 @@ section {
   z-index: 3;
   opacity: 0.5;
   transition: all 0.5s;
+
+  &.blue-index {
+    background-image: url("./images/index_blue.png");
+  }
+  &.green-index {
+    background-image: url("./images/index_green.png");
+  }
+  &.pink-index {
+    background-image: url("./images/index_pink.png");
+  }
+  &.purple-index {
+    background-image: url("./images/index_purple.png");
+  }
+  &.yellow-index {
+    background-image: url("./images/index_yellow.png");
+  }
 
   h1 {
     width: 90%;
