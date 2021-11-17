@@ -10,6 +10,33 @@ function Show(props) {
         return singleBookmark._id === id;
     });
 
+    const bookmarkIndex = bookmarks.findIndex((element)=>{return element._id === id})
+    console.log(bookmarkIndex)
+  let cardClass = 'blue-index'
+    switch(bookmarkIndex % 5){
+        case 0: 
+        cardClass = 'blue-index'
+        break
+
+        case 1: 
+        cardClass = 'green-index'
+        break
+
+        case 2: 
+        cardClass = 'pink-index'
+        break
+
+        case 3: 
+        cardClass = 'purple-index'
+        break
+
+        case 4: 
+        cardClass = 'yellow-index'
+        break
+
+        default:
+            cardClass = 'blue-index'
+    }
     // state for our form
     const [editForm, setEditForm] = useState(bookmark);
 
@@ -34,7 +61,7 @@ function Show(props) {
     return (
         
             <div id="show-index-card">
-                <div key={bookmark._id} className="show-bookmark" >
+                <div key={bookmark._id} className={"show-bookmark " + cardClass} >
                     <h1>{bookmark.title}</h1>
                     <h2>{bookmark.url}</h2>
             <div className="form-div">
